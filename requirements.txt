@@ -1,3 +1,2 @@
 scipy
 plotly.express
-pywin32
