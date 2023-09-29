@@ -2,3 +2,5 @@ scipy
 plotly.express
 streamlit-option-menu
 seaborn
+pywin32
+
