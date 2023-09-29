@@ -38,15 +38,28 @@ import plotly.graph_objects as go
 # File.Quit()
 
 # Load the Excel file
-import openpyxl
-workbook = openpyxl.load_workbook("acoes_que_acompanhamos_margens_precos_teto.xlsx")
+# import openpyxl
+# workbook = openpyxl.load_workbook("acoes_que_acompanhamos_margens_precos_teto.xlsx")
+
+# # Refresh all data connections in the workbook
+# for connection in workbook.connections:
+#     connection.refresh()
+# Save the updated workbook
+# workbook.save("acoes_que_acompanhamos_margens_precos_teto.xlsx")
+
+import xlwings as xw
+
+# Open the Excel file
+workbook = xw.Book("acoes_que_acompanhamos_margens_precos_teto.xlsx")
 
 # Refresh all data connections in the workbook
 for connection in workbook.connections:
     connection.refresh()
 
-# Save the updated workbook
+# Save and close the updated workbook
 workbook.save("acoes_que_acompanhamos_margens_precos_teto.xlsx")
+workbook.close()
+
 
 page_name = "De olho nos preços para Dividendos"
 df = pd.read_excel('acoes_que_acompanhamos_margens_precos_teto.xlsx', skiprows=1)
