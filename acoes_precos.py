@@ -17,25 +17,38 @@ import plotly.graph_objects as go
 #Nome desse app: "De olho nos preços para Dividendos"
 
 # Importing the pywin32 module
-import win32com.client
+# import win32com.client
   
-# Opening Excel software using the win32com
-File = win32com.client.Dispatch("Excel.Application")
+# # Opening Excel software using the win32com
+# File = win32com.client.Dispatch("Excel.Application")
   
-# Optional line to show the Excel software
-#File.Visible = 1
+# # Optional line to show the Excel software
+# #File.Visible = 1
   
-# Opening your workbook
-Workbook = File.Workbooks.open(r"E:\Users\JONATHAN LOKO\Documents\Repositorio\DOPD\acoes_que_acompanhamos_margens_precos_teto.xlsx")
+# # Opening your workbook
+# Workbook = File.Workbooks.open(r"E:\Users\JONATHAN LOKO\Documents\Repositorio\DOPD\acoes_que_acompanhamos_margens_precos_teto.xlsx")
   
-# Refeshing all the shests
-Workbook.RefreshAll()
+# # Refeshing all the shests
+# Workbook.RefreshAll()
   
-# Saving the Workbook
-Workbook.Save()
+# # Saving the Workbook
+# Workbook.Save()
   
-# Closing the Excel File
-File.Quit()
+# # Closing the Excel File
+# File.Quit()
+
+import xlwings as xw
+
+# Open the Excel file
+workbook = xw.Book("acoes_que_acompanhamos_margens_precos_teto.xlsx")
+
+# Refresh all data connections in the workbook
+for connection in workbook.connections:
+    connection.refresh()
+
+# Save and close the updated workbook
+workbook.save("acoes_que_acompanhamos_margens_precos_teto.xlsx")
+workbook.close()
 
 page_name = "De olho nos preços para Dividendos"
 df = pd.read_excel('acoes_que_acompanhamos_margens_precos_teto.xlsx', skiprows=1)
