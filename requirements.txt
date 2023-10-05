@@ -3,4 +3,6 @@ plotly.express
 streamlit-option-menu
 seaborn
 openpyxl
-xlwings-Server
+xlwings
+xlwings-server
+xlwings-reader
