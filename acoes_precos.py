@@ -47,18 +47,18 @@ import plotly.graph_objects as go
 # Save the updated workbook
 # workbook.save("acoes_que_acompanhamos_margens_precos_teto.xlsx")
 
-import xlwings as xw
+# import xlwings as xw
 
-# Open the Excel file
-workbook = xw.Book("acoes_que_acompanhamos_margens_precos_teto.xlsx")
+# # Open the Excel file
+# workbook = xw.Book("acoes_que_acompanhamos_margens_precos_teto.xlsx")
 
-# Refresh all data connections in the workbook
-for connection in workbook.connections:
-    connection.refresh()
+# # Refresh all data connections in the workbook
+# for connection in workbook.connections:
+#     connection.refresh()
 
-# Save and close the updated workbook
-workbook.save("acoes_que_acompanhamos_margens_precos_teto.xlsx")
-workbook.close()
+# # Save and close the updated workbook
+# workbook.save("acoes_que_acompanhamos_margens_precos_teto.xlsx")
+# workbook.close()
 
 
 page_name = "De olho nos preços para Dividendos"
