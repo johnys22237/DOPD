@@ -65,6 +65,7 @@ page_name = "De olho nos preços para Dividendos"
 df = pd.read_excel('acoes_que_acompanhamos_margens_precos_teto.xlsx', skiprows=1)
 df = df[['Nome_Empresa','media_valor_div_5anos','Barsi_preco_Teto','Preço Atual','margem_preco_Barsi %','meu preço','margem meu preco %']]
 df = df.sort_values(by=['margem meu preco %'], ascending=False)
+df.reset_index(inplace=True)
 
 ##############################################################################
 
